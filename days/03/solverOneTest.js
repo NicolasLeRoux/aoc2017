@@ -1,7 +1,7 @@
 const expect = require('expect.js');
 const solve = require('./solverOne.js');
 
-describe.only('Day 3: Spiral Memory (Part one),', function() {
+describe('Day 3: Spiral Memory (Part one),', function() {
 	/**
 	 * Example n°01: Data from square 1 is carried 0 steps, since it's at the access
 	 * port.
