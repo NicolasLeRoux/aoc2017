@@ -1,7 +1,7 @@
 const expect = require('expect.js');
-const solve = require('./solver.js');
+const solve = require('./solverOne.js');
 
-describe('Day 1: Inverse Captcha,', function() {
+describe('Day 1: Inverse Captcha (Part one),', function() {
 	/**
 	 * Example n°01: 1122 produces a sum of 3 (1 + 2) because the first digit (1)
 	 * matches the second digit and the third digit (2) matches the fourth digit.

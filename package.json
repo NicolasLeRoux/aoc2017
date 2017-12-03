@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "day:01": "node ./days/01/index.js",
-    "test": "mocha ./days/**/test.js"
+    "test": "mocha ./days/**/*Test.js"
   },
   "repository": {
     "type": "git",
