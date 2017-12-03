@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const solver = require('./solver.js');
+const solverOne = require('./solverOne.js');
+const solverTwo = require('./solverTwo.js');
 
 const txt = fs.readFileSync(path.resolve(__dirname, 'input.txt'), 'UTF-8')
 	.replace(/\n$/, '');
@@ -11,4 +12,5 @@ raws.forEach((raw, index) => {
 	matrix[index] = raw.split(/\t/);
 });
 
-console.info('Answer: ', solver(matrix));
+console.info('Answer part one: ', solverOne(matrix));
+console.info('Answer part two: ', solverTwo(matrix));

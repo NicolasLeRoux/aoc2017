@@ -1,7 +1,7 @@
 const expect = require('expect.js');
-const solve = require('./solver.js');
+const solve = require('./solverOne.js');
 
-describe('Day 2: Corruption Checksum,', function() {
+describe('Day 2: Corruption Checksum (Part one),', function() {
 	/**
 	 * Example n°01: For the given the following spreadsheet,
 	 *
