@@ -6,6 +6,7 @@
   "scripts": {
     "day:01": "node ./days/01/index.js",
     "day:02": "node ./days/02/index.js",
+    "day:03": "node ./days/03/index.js",
     "test": "mocha ./days/**/*Test.js"
   },
   "repository": {
