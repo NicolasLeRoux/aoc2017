@@ -1,7 +1,7 @@
 const expect = require('expect.js');
 const solve = require('./solverOne.js');
 
-describe.only('Day 4: High-Entropy Passphrases (Part one),', function() {
+describe('Day 4: High-Entropy Passphrases (Part one),', function() {
 	/**
 	 * Example n°01: aa bb cc dd ee is valid.
 	 */
