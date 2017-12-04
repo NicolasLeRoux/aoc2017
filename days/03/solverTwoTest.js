@@ -1,7 +1,7 @@
 const expect = require('expect.js');
 const solve = require('./solverTwo.js');
 
-describe.only('Day 3: Spiral Memory (Part two),', function() {
+describe('Day 3: Spiral Memory (Part two),', function() {
 	/**
 	 * Example n°01: Square 3 has both of the above squares as neighbors and stores
 	 * the sum of their values, 2.
