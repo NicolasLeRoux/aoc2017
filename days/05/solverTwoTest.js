@@ -1,7 +1,7 @@
 const expect = require('expect.js');
 const solve = require('./solverTwo.js');
 
-describe.only('Day 5: A Maze of Twisty Trampolines, All Alike (Part two),', function() {
+describe('Day 5: A Maze of Twisty Trampolines, All Alike (Part two),', function() {
 	/**
 	 * Example n°01: In this example, the exit is reached in 5 steps.
 	 */
