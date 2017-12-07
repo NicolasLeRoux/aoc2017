@@ -1,31 +1,43 @@
 module.exports = function (array) {
-	let structure = {};
+	let struct = {};
 
+	// Parsing
 	array.forEach(lign => {
-		let desc, childs, name, weight;
-
-		if (lign.indexOf(' -> ') !== -1) {
-			let splitted = lign.split(' -> ');
-
-			desc = splitted[0]; 
-			childs = splitted[1].split(', ');
-		} else {
-			desc = lign;
+		let name = lign.slice(0, lign.indexOf(' '));
+		let weight = +lign.slice(lign.indexOf('(') + 1, lign.indexOf(')'));
+		let childs;
+		
+		if (lign.indexOf('->') !== -1) {
+			childs = lign.slice(lign.indexOf('->') + 3)
+				.split(', ');
 		}
 
-		let tmp = desc.split(' ');
-		name = tmp[0];
-		weight = tmp[1].slice(1, tmp[1].length - 1);
-
-		let obj = {
+		struct[name] = {
 			name,
-			weight
+			weight,
+			childs
 		};
-		if (childs) obj.childsName = childs;
-
-		structure[obj.name] = obj;
 	});
 
-	console.log(structure);
-	return 0;
+	let toRm = [];
+	for (let key in struct) {
+		let elm = struct[key];
+
+		if (elm.childs) {
+			let tmp = [];
+
+			elm.childs.forEach(childName => {
+				tmp.push(struct[childName]);
+				toRm.push(childName);
+			});
+
+			elm.childs = tmp;
+		}
+	}
+
+	for (let i = 0; i < toRm.length; i++) {
+		delete struct[toRm[i]];
+	}
+
+	return Object.getOwnPropertyNames(struct)[0];
 };

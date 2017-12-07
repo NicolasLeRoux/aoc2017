@@ -1,7 +1,7 @@
 const expect = require('expect.js');
 const solve = require('./solverOne.js');
 
-describe.only('Day 7: Recursive Circus (Part one),', function() {
+describe('Day 7: Recursive Circus (Part one),', function() {
 	/**
 	 * Example n°01: In this example, the exit is tknk.
 	 */
@@ -23,7 +23,7 @@ describe.only('Day 7: Recursive Circus (Part one),', function() {
 				'cntj (57)'
 			];
 
-			expect(solve(array)).to.equal(5);
+			expect(solve(array)).to.equal('tknk');
 		});
 	});
 });
