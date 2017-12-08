@@ -22,3 +22,21 @@ module.exports.parse = function (str) {
 		condition
 	};
 };
+
+/**
+ * Find the key with the higher value
+ *
+ * Ex: {a: 10, b: 20} will return b.
+ */
+module.exports.findKeyWithHigherValue = function (obj) {
+	let maxName, maxVal;
+
+	Object.getOwnPropertyNames(obj).forEach(name => {
+		if (maxVal === undefined || maxVal < obj[name]) {
+			maxVal = obj[name];
+			maxName = name;
+		}
+	});
+
+	return maxName;
+};

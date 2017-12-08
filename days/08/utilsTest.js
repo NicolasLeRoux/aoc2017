@@ -43,6 +43,27 @@ describe('Day 8: Tools,', function() {
 			expect(utils.parse('b inc 100 if a != 20').condition).to.equal('!=20');
 		});
 	});
+
+	describe('The method to find the key with the higher value,', function() {
+		it('should return \'a\' as for the given input.', function() {
+			let obj = {
+				a: 10,
+				b: 20
+			};
+
+			expect(utils.findKeyWithHigherValue(obj)).to.equal('b');
+		});
+
+		it('should return \'abc\' as for the given input.', function() {
+			let obj = {
+				a: 10,
+				b: -20,
+				abc: 22
+			};
+
+			expect(utils.findKeyWithHigherValue(obj)).to.equal('abc');
+		});
+	});
 });
 
 
