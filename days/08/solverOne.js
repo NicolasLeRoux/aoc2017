@@ -13,8 +13,9 @@ module.exports = function (array) {
 		} = utils.parse(instruction);
 
 		if (!registers[registerToModify]) registers[registerToModify] = 0;
+		if (!registers[registerToEvaluate]) registers[registerToEvaluate] = 0;
 
-		let evaluatedCond = eval(registers[registerToModify] + condition);
+		let evaluatedCond = eval(registers[registerToEvaluate] + condition);
 		if (evaluatedCond) {
 			switch (action) {
 				case 'inc':
