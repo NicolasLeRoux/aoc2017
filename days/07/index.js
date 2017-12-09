@@ -8,6 +8,3 @@ const txt = fs.readFileSync(path.resolve(__dirname, 'input.txt'), 'UTF-8')
 const array = txt.split(/\n/);
 
 console.info('Answer part one: ', solverOne(array));
-
-
-

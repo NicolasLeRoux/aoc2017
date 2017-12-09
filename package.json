@@ -11,6 +11,7 @@
     "day:05": "node ./days/05/index.js",
     "day:06": "node ./days/06/index.js",
     "day:07": "node ./days/07/index.js",
+    "day:08": "node ./days/08/index.js",
     "test": "mocha ./days/**/*Test.js"
   },
   "repository": {

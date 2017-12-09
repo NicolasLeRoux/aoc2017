@@ -2,7 +2,7 @@ const expect = require('expect.js');
 const utils = require('./utils.js');
 
 describe('Day 8: Tools,', function() {
-	describe('The jump instruction parsing method,', function() {
+	describe('The jump instruction parsing method aka \'parse\',', function() {
 		it('should return \'b\' as registerToModify for the input \'b inc 5 if a > 1\'.', function() {
 			expect(utils.parse('b inc 5 if a > 1').registerToModify).to.equal('b');
 		});
@@ -44,24 +44,24 @@ describe('Day 8: Tools,', function() {
 		});
 	});
 
-	describe('The method to find the key with the higher value,', function() {
-		it('should return \'a\' as for the given input.', function() {
+	describe('The method to find the higher value aka \'max\',', function() {
+		it('should return 20 as for the given input.', function() {
 			let obj = {
 				a: 10,
 				b: 20
 			};
 
-			expect(utils.findKeyWithHigherValue(obj)).to.equal('b');
+			expect(utils.max(obj)).to.equal(20);
 		});
 
-		it('should return \'abc\' as for the given input.', function() {
+		it('should return 22 as for the given input.', function() {
 			let obj = {
 				a: 10,
 				b: -20,
 				abc: 22
 			};
 
-			expect(utils.findKeyWithHigherValue(obj)).to.equal('abc');
+			expect(utils.max(obj)).to.equal(22);
 		});
 	});
 });

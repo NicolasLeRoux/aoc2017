@@ -17,5 +17,20 @@ describe('Day 8: I Heard You Like Registers (Part one),', function() {
 			expect(solve(array)).to.equal(1);
 		});
 	});
-});
 
+	/**
+	 * Others examples...
+	 */
+	describe('Others examples,', function() {
+		it('should return 5 for the given input.', function() {
+			var array = [
+				'b inc 5 if a <= 1',
+				'a inc 1 if b < 5',
+				'c dec -10 if a >= 1',
+				'c inc -20 if c == 10'
+			];
+
+			expect(solve(array)).to.equal(5);
+		});
+	});
+});

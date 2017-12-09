@@ -29,5 +29,5 @@ module.exports = function (array) {
 		}
 	});
 
-	return 0;
+	return utils.max(registers);
 };
