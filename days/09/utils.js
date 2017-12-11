@@ -6,6 +6,7 @@ module.exports.getEndOfGarbageIndex = function (str) {
 	for (i = 0; i < str.length; i++) {
 		let char = str[i];
 
+		// Canceled characters must be skipped
 		if (char === '!') {
 			i++;
 			continue;
