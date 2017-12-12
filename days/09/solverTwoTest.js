@@ -73,7 +73,7 @@ describe('Day 9: Stream Processing (Part two),', function() {
 			expect(solve('<<<<<<<>')).to.equal(6);
 		});
 
-		it.only('should return 7 for the input \'{{<a!r>},{<a>},{<abc>},{<ab>}}\'.', function() {
+		it('should return 7 for the input \'{{<a!r>},{<a>},{<abc>},{<ab>}}\'.', function() {
 			expect(solve('{{<a!r>},{<a>},{<abc>},{<ab>}}')).to.equal(7);
 		});
 	});
