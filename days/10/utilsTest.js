@@ -33,12 +33,33 @@ describe('Day 10: Tools,', function() {
 		});
 
 		/**
+		 * Simple replace (limit case)
+		 */
+		it('should return [1, 2, 3, 7, 8] for the given input.', function() {
+			var array = [1, 2, 3, 4, 5];
+
+			expect(utils.circularReplace(array, [7, 8], 3)).to.eql([1, 2, 3, 7, 8]);
+		});
+
+		/**
 		 * Circular replace
 		 */
 		it('should return [9, 2, 3, 7, 8] for the given input.', function() {
 			var array = [1, 2, 3, 4, 5];
 
 			expect(utils.circularReplace(array, [7, 8, 9], 3)).to.eql([9, 2, 3, 7, 8]);
+		});
+	});
+
+	describe.only('The method to knot a hash list following steps,', function () {
+		/**
+		 * Example n°01: With the hash list [0, 1, 2, 3, 4] and the steps [3, 4
+		 * 1, 5], the generated knotted hash list should return [3, 4, 2, 1, 0]
+		 */
+		it('should return [3, 4, 2, 1, 0] for the given inputs.', function () {
+			var steps = [3, 4, 1, 5];
+
+			expect(utils.knottedHashList(5, steps)).to.eql([3, 4, 2, 1, 0]);
 		});
 	});
 });
