@@ -1,5 +1,5 @@
 /**
- * Mrthod to parse the communication pipe input
+ * Méthod to parse the communication pipe input
  *
  * Ex: '0 <-> 2, 3' return {id: 0, programs: [2, 3]}
  */
