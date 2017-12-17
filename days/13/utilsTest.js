@@ -22,4 +22,16 @@ describe('Day 13: Tools,', function() {
 			});
 		});
 	});
+
+	describe('The method to find the highest key in an object aka \'findHighestKey\',', function() {
+		/**
+		 * Simple input
+		 */
+		it('should return 10 for the input {10: 1, 2: 1}.', function() {
+			expect(utils.buildLayersMap({
+				'10': 1,
+				'2': 1
+			})).to.eql(10);
+		});
+	});
 });
