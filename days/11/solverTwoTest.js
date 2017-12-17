@@ -1,7 +1,7 @@
 const expect = require('expect.js');
-const solve = require('./solverOne.js');
+const solve = require('./solverTwo.js');
 
-describe('Day 11: Hex Ed (Part one),', function() {
+describe('Day 11: Hex Ed (Part two),', function() {
 	/**
 	 * Example n°01: ne,ne,ne is 3 steps away.
 	 */
@@ -12,11 +12,12 @@ describe('Day 11: Hex Ed (Part one),', function() {
 	});
 
 	/**
-	 * Example n°02: ne,ne,sw,sw is 0 steps away (back where you started).
+	 * Example n°02: ne,ne,sw,sw is 0 steps away (back where you started) but 2
+	 * is the furthest he ever got.
 	 */
 	describe('Example n°02,', function() {
-		it('should return 0 for the input \'ne,ne,sw,sw\'.', function() {
-			expect(solve(['ne', 'ne', 'sw', 'sw'])).to.equal(0);
+		it('should return 2 for the input \'ne,ne,sw,sw\'.', function() {
+			expect(solve(['ne', 'ne', 'sw', 'sw'])).to.equal(2);
 		});
 	});
 
@@ -42,8 +43,8 @@ describe('Day 11: Hex Ed (Part one),', function() {
 	 * Others examples..
 	 */
 	describe('Others examples,', function() {
-		it('should return 1 for the input \'n,se,s,sw,nw,n,ne\'.', function() {
-			expect(solve(['n', 'se', 's', 'sw', 'nw', 'n', 'ne'])).to.equal(1);
+		it('should return 2 for the input \'n,se,se,s,sw,nw,n,ne\'.', function() {
+			expect(solve(['n', 'se', 'se', 's', 'nw', 'sw', 'nw', 'n', 'ne'])).to.equal(2);
 		});
 	});
 });

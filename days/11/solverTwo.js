@@ -2,7 +2,8 @@ const utils = require('./utils.js');
 
 module.exports = function (array) {
 	var x = 0,
-		y = 0;
+		y = 0,
+		max = 0;
 
 	for (let i = 0; i < array.length; i++) {
 		let dir = array[i];
@@ -31,7 +32,12 @@ module.exports = function (array) {
 				y--;
 				break;
 		}
+
+		let dist = utils.calFewestSteps(x, y);
+		if (dist > max) {
+			max = dist;
+		}
 	}
 
-	return utils.calFewestSteps(x, y);
+	return max;
 };
