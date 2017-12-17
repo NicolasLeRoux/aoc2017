@@ -19,7 +19,7 @@ module.exports.buildLayersMap = function (array) {
  * Method to find the highest key in an object
  */
 module.exports.findHighestKey = function (obj) {
-	return Object.keys(obj)
-		.sort((a, b) => a < b ? -1 : 1)
+	return +Object.keys(obj)
+		.sort((a, b) => +a < +b ? 1 : -1)
 		[0];
 };
