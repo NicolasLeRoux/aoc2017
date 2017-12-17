@@ -1,8 +1,8 @@
 /**
- * Method to do a circular slice 
+ * Method to do a circular slice
  */
 var circularSlice = module.exports.circularSlice = function (array, from, to) {
-	return from <= to ? array.slice(from, to) :
+	return from < to ? array.slice(from, to) :
 		array.slice(from).concat(array.slice(0, to));
 };
 
@@ -25,24 +25,27 @@ var circularReplace = module.exports.circularReplace = function (array, elms, fr
 	return result;
 };
 
+var circularAdd = module.exports.circularAdd = function (val1, val2, size) {
+	var sum = val1 + val2;
+	return sum < size ? sum : sum % size;
+};
+
 /**
- * TODO
+ * Method to knot a hash list following the given steps
  */
-module.exports.knottedHashList = function (hashSize, steps) {
-		var position = 0,
+module.exports.knotHashList = function (hashSize, steps) {
+		var currentPosition = 0,
 			hashList = new Array(hashSize)
 				.fill(0)
 				.map((val, i) => i);
 
 	for (let i = 0; i < steps.length; i++) {
-		let num = +steps[i],
-			tmp = position + num < hashSize ? position + num : num - hashSize;
-			subList = circularSlice(hashList, position, tmp);
+		let step = +steps[i],
+			to = circularAdd(currentPosition, step, hashList.length),
+			subList = circularSlice(hashList, currentPosition, to);
 
-		hashList = circularReplace(hashList, subList.reverse(), position);
-		position = num + i;
-
-		console.log(position, tmp, subList, hashList);
+		hashList = circularReplace(hashList, subList.reverse(), currentPosition);
+		currentPosition = circularAdd(currentPosition, step + i, hashList.length);
 	}
 
 	return hashList;

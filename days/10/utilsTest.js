@@ -20,6 +20,15 @@ describe('Day 10: Tools,', function() {
 
 			expect(utils.circularSlice(array, 3, 1)).to.eql([4, 5, 1]);
 		});
+
+		/**
+		 * Slice all list
+		 */
+		it('should return [3, 4, 5, 1, 2] for the given input.', function() {
+			var array = [1, 2, 3, 4, 5];
+
+			expect(utils.circularSlice(array, 2, 2)).to.eql([3, 4, 5, 1, 2]);
+		});
 	});
 
 	describe('The method to do a circular replace aka \'circularReplace\',', function() {
@@ -51,7 +60,37 @@ describe('Day 10: Tools,', function() {
 		});
 	});
 
-	describe.only('The method to knot a hash list following steps,', function () {
+	describe('The method to do a circular addition,', function () {
+		/**
+		 * Simple add
+		 */
+		it('should return 4 for the given input.', function() {
+			expect(utils.circularAdd(2, 2, 10)).to.equal(4);
+		});
+
+		/**
+		 * Simple add (limit case)
+		 */
+		it('should return 9 for the given input.', function() {
+			expect(utils.circularAdd(4, 5, 10)).to.equal(9);
+		});
+
+		/**
+		 * Circular add
+		 */
+		it('should return 2 for the given input.', function() {
+			expect(utils.circularAdd(3, 5, 5)).to.equal(3);
+		});
+
+		/**
+		 * Circular add (limit case)
+		 */
+		it('should return 0 for the given input.', function() {
+			expect(utils.circularAdd(5, 5, 10)).to.equal(0);
+		});
+	});
+
+	describe('The method to knot a hash list following the given steps,', function () {
 		/**
 		 * Example n°01: With the hash list [0, 1, 2, 3, 4] and the steps [3, 4
 		 * 1, 5], the generated knotted hash list should return [3, 4, 2, 1, 0]
@@ -59,7 +98,7 @@ describe('Day 10: Tools,', function() {
 		it('should return [3, 4, 2, 1, 0] for the given inputs.', function () {
 			var steps = [3, 4, 1, 5];
 
-			expect(utils.knottedHashList(5, steps)).to.eql([3, 4, 2, 1, 0]);
+			expect(utils.knotHashList(5, steps)).to.eql([3, 4, 2, 1, 0]);
 		});
 	});
 });
