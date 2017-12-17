@@ -23,3 +23,10 @@ module.exports.findHighestKey = function (obj) {
 		.sort((a, b) => +a < +b ? 1 : -1)
 		[0];
 };
+
+/**
+ * Method to get the scanner position with the range and the picosecond
+ */
+module.exports.getScannedPosition = function (range, picosecond) {
+	return 0;
+};
