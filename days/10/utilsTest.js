@@ -118,5 +118,15 @@ describe('Day 10: Tools,', function() {
 
 			expect(utils.knotHashList(5, steps)).to.eql([3, 4, 2, 1, 0]);
 		});
+
+		/**
+		 * Example n°02: With the hash list [0, 1, 2, 3, 4] and the steps [0],
+		 * the generated knotted hash list should return [0, 1, 2, 3, 4]
+		 */
+		it('should return [0, 1, 2, 3, 4] for the given inputs.', function () {
+			var steps = [0];
+
+			expect(utils.knotHashList(5, steps)).to.eql([0, 1, 2, 3, 4]);
+		});
 	});
 });

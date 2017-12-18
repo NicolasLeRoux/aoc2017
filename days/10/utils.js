@@ -53,7 +53,10 @@ module.exports.knotHashList = function (hashSize, steps) {
 			to = circularAdd(currentPosition, step, hashList.length),
 			subList = circularSlice(hashList, currentPosition, to);
 
-		hashList = circularReplace(hashList, subList.reverse(), currentPosition);
+		if (step !== 0) {
+			hashList = circularReplace(hashList, subList.reverse(), currentPosition);
+		}
+
 		currentPosition = circularAdd(currentPosition, step + i, hashList.length);
 	}
 
