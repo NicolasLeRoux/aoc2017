@@ -28,5 +28,8 @@ module.exports.findHighestKey = function (obj) {
  * Method to get the scanner position with the range and the picosecond
  */
 module.exports.getScannedPosition = function (range, picosecond) {
-	return 0;
+	let loop = 2 * range - 2,
+		remainer = picosecond % loop;
+
+	return remainer < range ? remainer : loop - remainer;
 };
