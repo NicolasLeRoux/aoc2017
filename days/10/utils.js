@@ -2,8 +2,11 @@
  * Method to do a circular slice
  */
 var circularSlice = module.exports.circularSlice = function (array, from, to) {
-	return from < to ? array.slice(from, to) :
-		array.slice(from).concat(array.slice(0, to));
+	let cirFrom = from % array.length,
+		cirTo = to % array.length;
+
+	return cirFrom < cirTo ? array.slice(cirFrom, cirTo) :
+		array.slice(cirFrom).concat(array.slice(0, cirTo));
 };
 
 /**

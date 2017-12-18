@@ -71,7 +71,7 @@ describe('Day 10: Tools,', function() {
 		/**
 		 * Circular replace bis
 		 */
-		it.only('should return [1, 2, 7, 8, 9] for the given input.', function() {
+		it('should return [1, 2, 7, 8, 9] for the given input.', function() {
 			var array = [1, 2, 3, 4, 5];
 
 			expect(utils.circularReplace(array, [7, 8, 9], 12)).to.eql([1, 2, 7, 8, 9]);
