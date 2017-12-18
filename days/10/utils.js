@@ -70,3 +70,11 @@ module.exports.toASCII = function (str) {
 	return str.split('')
 		.map(char => char.charCodeAt(0));
 };
+
+/**
+ * Method to add the standard length suffix values.
+ */
+module.exports.addStandardSuffix = function (array) {
+	return array.slice()
+		.concat([17, 31, 73, 47, 23]);
+};

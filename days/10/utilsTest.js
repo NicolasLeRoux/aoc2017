@@ -130,12 +130,23 @@ describe('Day 10: Tools,', function() {
 		});
 	});
 
-	describe('to convert a string in an array of ASCII aka \'toASCII\',', function () {
+	describe('The method to convert a string in an array of ASCII aka \'toASCII\',', function () {
 		/**
 		 * 1,2,3 should be convert into 49,44,50,44,51 in ASCII.
 		 */
 		it('Should return [49,44,50,44,51] for the input \'1,2,3\',', function () {
 			expect(utils.toASCII('1,2,3')).to.eql([49, 44, 50, 44, 51]);
+		});
+	});
+
+	describe('The method to add the standard length suffix values aka \'addStandardSuffix\',', function () {
+		/**
+		 * 1,2,3 should be convert into 49,44,50,44,51 in ASCII.
+		 */
+		it('Should return [49, 44, 50, 44, 51, 17, 31, 73, 47, 23] for the input [49, 44, 50, 44, 51],', function () {
+			var array = [49, 44, 50, 44, 51];
+
+			expect(utils.addStandardSuffix(array)).to.eql([49, 44, 50, 44, 51, 17, 31, 73, 47, 23]);
 		});
 	});
 });
