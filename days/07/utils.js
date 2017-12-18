@@ -55,3 +55,18 @@ module.exports.buildCircusTower = function (array) {
 
 	return Object.values(struct)[0];
 };
+
+/**
+ * Method to calcul the balance of a node
+ */
+var calculBalance = module.exports.calculBalance = function (node) {
+	var balance = node.weight;
+
+	if (node.childs.length !== 0) {
+		var array = node.childs.forEach(child => {
+			balance += calculBalance(child);
+		});
+	}
+
+	return balance;
+};

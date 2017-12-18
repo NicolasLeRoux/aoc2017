@@ -61,5 +61,45 @@ describe('Day 07: Tools,', function() {
 			});
 		});
 	});
+
+	describe.only('The method to calcul the balance of a node aka \'calculBalance\',', function() {
+		/**
+		 * Node without childs
+		 */
+		it('should return the weight as value for a node without childs.', function () {
+			expect(utils.calculBalance({
+				name: 'a',
+				weight: 2,
+				childs: []
+			})).to.equal(2);
+		});
+
+		/**
+		 * Node with 3 balanced childs
+		 */
+		it('should return 11 for a node with 3 balanced childs.', function () {
+			expect(utils.calculBalance({
+				name: 'a',
+				weight: 2,
+				childs: [
+					{
+						name: 'b',
+						weight: 3,
+						childs: []
+					},
+					{
+						name: 'c',
+						weight: 3,
+						childs: []
+					},
+					{
+						name: 'd',
+						weight: 3,
+						childs: []
+					}
+				]
+			})).to.equal(11);
+		});
+	});
 });
 
