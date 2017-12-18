@@ -10,21 +10,27 @@ var circularSlice = module.exports.circularSlice = function (array, from, to) {
  * Methode to do a circular replace
  */
 var circularReplace = module.exports.circularReplace = function (array, elms, from) {
-	var result = array.slice();
+	var result = array.slice(),
+		aLength = array.length,
+		eLength = elms.length;
 
-	if (elms.length + from <= array.length) {
-		result.splice(from, elms.length, ...elms);
+	if (eLength + from < aLength) {
+		result.splice(from, eLength, ...elms);
 	} else {
-		let rightLength = array.length - from,
-			leftLength = elms.length - rightLength;
+		let circularFrom = from % aLength,
+			rightLength = aLength - circularFrom,
+			leftLength = eLength - rightLength;
 
-		result.splice(from, rightLength, ...elms.slice(0, rightLength));
+		result.splice(circularFrom, rightLength, ...elms.slice(0, rightLength));
 		result.splice(0, leftLength, ...elms.slice(rightLength));
 	}
 
 	return result;
 };
 
+/**
+ * Method to do a circular addition
+ */
 var circularAdd = module.exports.circularAdd = function (val1, val2, size) {
 	var sum = val1 + val2;
 	return sum < size ? sum : sum % size;

@@ -42,6 +42,15 @@ describe('Day 10: Tools,', function() {
 		});
 
 		/**
+		 * Simple replace bis
+		 */
+		it('should return [7, 8, 3, 4, 5] for the given input.', function() {
+			var array = [1, 2, 3, 4, 5];
+
+			expect(utils.circularReplace(array, [7, 8], 0)).to.eql([7, 8, 3, 4, 5]);
+		});
+
+		/**
 		 * Simple replace (limit case)
 		 */
 		it('should return [1, 2, 3, 7, 8] for the given input.', function() {
@@ -57,6 +66,15 @@ describe('Day 10: Tools,', function() {
 			var array = [1, 2, 3, 4, 5];
 
 			expect(utils.circularReplace(array, [7, 8, 9], 3)).to.eql([9, 2, 3, 7, 8]);
+		});
+
+		/**
+		 * Circular replace bis
+		 */
+		it.only('should return [1, 2, 7, 8, 9] for the given input.', function() {
+			var array = [1, 2, 3, 4, 5];
+
+			expect(utils.circularReplace(array, [7, 8, 9], 12)).to.eql([1, 2, 7, 8, 9]);
 		});
 	});
 
