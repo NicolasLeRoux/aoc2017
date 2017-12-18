@@ -62,7 +62,7 @@ describe('Day 07: Tools,', function() {
 		});
 	});
 
-	describe.only('The method to calcul the balance of a node aka \'calculBalance\',', function() {
+	describe('The method to calcul the balance of a node aka \'calculBalance\',', function() {
 		/**
 		 * Node without childs
 		 */
