@@ -62,3 +62,11 @@ module.exports.knotHashList = function (hashSize, steps) {
 
 	return hashList;
 };
+
+/**
+ * Method to convert a string in an array of ASCII.
+ */
+module.exports.toASCII = function (str) {
+	return str.split('')
+		.map(char => char.charCodeAt(0));
+};

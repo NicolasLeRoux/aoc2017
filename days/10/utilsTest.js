@@ -129,4 +129,13 @@ describe('Day 10: Tools,', function() {
 			expect(utils.knotHashList(5, steps)).to.eql([0, 1, 2, 3, 4]);
 		});
 	});
+
+	describe('to convert a string in an array of ASCII aka \'toASCII\',', function () {
+		/**
+		 * 1,2,3 should be convert into 49,44,50,44,51 in ASCII.
+		 */
+		it('Should return [49,44,50,44,51] for the input \'1,2,3\',', function () {
+			expect(utils.toASCII('1,2,3')).to.eql([49, 44, 50, 44, 51]);
+		});
+	});
 });
