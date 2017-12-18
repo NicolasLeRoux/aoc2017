@@ -1,22 +1,13 @@
+const utils = require('./utils.js');
+
 module.exports = function (array) {
 	let struct = {};
 
 	// Parsing
 	array.forEach(lign => {
-		let name = lign.slice(0, lign.indexOf(' '));
-		let weight = +lign.slice(lign.indexOf('(') + 1, lign.indexOf(')'));
-		let childs;
-		
-		if (lign.indexOf('->') !== -1) {
-			childs = lign.slice(lign.indexOf('->') + 3)
-				.split(', ');
-		}
+		let obj = utils.parse(lign);
 
-		struct[name] = {
-			name,
-			weight,
-			childs
-		};
+		struct[obj.name] = obj;
 	});
 
 	let toRm = [];

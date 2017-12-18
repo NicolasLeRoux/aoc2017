@@ -1,7 +1,7 @@
 const expect = require('expect.js');
 const solve = require('./solverTwo.js');
 
-describe.only('Day 13: Packet Scanners (Part two),', function() {
+describe('Day 13: Packet Scanners (Part two),', function() {
 	/**
 	 * Example n°01: for the following layers
 	 * 0: 3
