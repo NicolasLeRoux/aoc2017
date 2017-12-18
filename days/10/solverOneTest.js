@@ -1,7 +1,7 @@
 const expect = require('expect.js');
 const solve = require('./solverOne.js');
 
-describe.skip('Day 9: Stream Processing (Part one),', function() {
+describe.skip('Day 10: Knot Hash (Part one),', function() {
 	/**
 	 * Example n°01: TODO
 	 */
