@@ -1,7 +1,7 @@
 const expect = require('expect.js');
 const solve = require('./solverTwo.js');
 
-describe.only('Day 7: Recursive Circus (Part two),', function() {
+describe('Day 7: Recursive Circus (Part two),', function() {
 	/**
 	 * Example n°01: In this example, the exit is 60.
 	 */
@@ -48,4 +48,3 @@ describe.only('Day 7: Recursive Circus (Part two),', function() {
 		});
 	});
 });
-

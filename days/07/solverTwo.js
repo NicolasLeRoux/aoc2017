@@ -34,12 +34,14 @@ module.exports = function (array) {
 	let incorrectBalance = utils.calculBalance(node),
 		correctIndex = childIndex !== 0 ? 0 : 1,
 		correctBalance = utils.calculBalance(parentNode.childs[correctIndex]),
-		diff = correctBalance - incorrectBalance;
+		diff = correctBalance - incorrectBalance,
+		result;
 
-	if (node.childs.length !== 2) {
+	if (node.childs.length === 2) {
+		result = (correctBalance - node.weight) / 2;
 	} else {
-		console.log(node.weight - diff);
+		result = node.weight + diff;
 	}
 
-	return 0;
+	return result;
 };
