@@ -69,3 +69,10 @@ module.exports.getNextPosition = function (matrix, position) {
 
 	return {x, y, dir};
 };
+
+/**
+ * Method to serialize the path.
+ */
+module.exports.serializePath = function (matrix, position) {
+	return [];
+};
