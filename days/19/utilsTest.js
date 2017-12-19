@@ -1,7 +1,7 @@
 const expect = require('expect.js');
 const utils = require('./utils.js');
 
-describe.only('Day 19: Tools,', function() {
+describe('Day 19: Tools,', function() {
 	describe('The method find the maze starting point aka \'findStartingPoint\',', function() {
 		/**
 		 * No starting point.
