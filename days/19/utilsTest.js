@@ -205,7 +205,7 @@ describe.only('Day 19: Tools,', function() {
 				},
 				expected: {
 					x: 1,
-					y: 2,
+					y: 1,
 					dir: 'S'
 				}
 			},
@@ -222,7 +222,7 @@ describe.only('Day 19: Tools,', function() {
 					dir: 'E'
 				},
 				expected: {
-					x: 2,
+					x: 1,
 					y: 1,
 					dir: 'E'
 				}

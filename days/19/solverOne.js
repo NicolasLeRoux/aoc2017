@@ -1,9 +1,9 @@
 const utils = require('./utils.js');
 
 module.exports = function (matrix) {
-	let startingIndex = utils.findStartingPoint(matrix[0]);
+	let position = utils.getInitialPosition(matrix);
 
-	console.log(startingIndex);
+	console.log(position);
 
 	return '';
 };
