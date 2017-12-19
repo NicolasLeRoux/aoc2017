@@ -96,3 +96,18 @@ module.exports.reduceSparseHash = function (array) {
 	
 	return result;
 };
+
+/**
+ * Method to convert an array into a hexadecimal string.
+ */
+module.exports.toHexa = function (array) {
+	var result = '';
+
+	array.forEach(item => {
+		let hexa = item.toString(16);
+
+		result += hexa.length === 2 ? hexa : '0' + hexa;
+	});
+
+	return result;
+};

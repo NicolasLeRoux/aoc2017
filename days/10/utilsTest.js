@@ -171,4 +171,15 @@ describe('Day 10: Tools,', function() {
 			expect(utils.reduceSparseHash(array)).to.eql([22, 54]);
 		});
 	});
+
+	describe('The method to convert an array into a haxe string aka \'toHexa\',', function () {
+		/**
+		 * Simple example
+		 */
+		it('Should return 4007ff for the input [64, 7, 255].', function () {
+			var array = [64, 7, 255];
+
+			expect(utils.toHexa(array)).to.eql('4007ff');
+		});
+	});
 });
