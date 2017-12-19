@@ -25,7 +25,25 @@ describe.only('Day 19: Tools,', function() {
 			expect(utils.findStartingPoint(matrix)).to.eql(2);
 		});
 	});
-	describe('The method return the value in the matrix at a given position aka \'getAt\',', function() {
+
+	describe('The method to get the initial position aka \'getInitialPosition\',', function() {
+		/**
+		 * Simple starting point
+		 */
+		it('should return x:2, y:0 and dir:S for a maze with a simple starting point.', function() {
+			var matrix = [
+				[' ', ' ', '|', ' ']
+			];
+
+			expect(utils.getInitialPosition(matrix)).to.eql({
+				x: 2,
+				y: 0,
+				dir: 'S'
+			});
+		});
+	});
+
+	describe('The method to get the value in the matrix at a given position aka \'getAt\',', function() {
 		var matrix = [
 			['a', 'b', 'c'],
 			['d', 'e', 'f'],
