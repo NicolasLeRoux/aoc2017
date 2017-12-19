@@ -28,7 +28,7 @@ var getAt = module.exports.getAt = function (matrix, position) {
 /**
  * Method to get the next position in the maze.
  */
-module.exports.getNextPosition = function (matrix, position) {
+var getNextPosition = module.exports.getNextPosition = function (matrix, position) {
 	let x = position.x,
 		y = position.y,
 		dir = position.dir,
@@ -74,5 +74,17 @@ module.exports.getNextPosition = function (matrix, position) {
  * Method to serialize the path.
  */
 module.exports.serializePath = function (matrix, position) {
-	return [];
+	let val = getAt(matrix, position),
+		result = [val];
+
+	while (position !== undefined) {
+		position = getNextPosition(matrix, position);
+
+		if (position !== undefined) {
+			val = getAt(matrix, position);
+			if (val !== ' ') result.push(val);
+		} 
+	}
+
+	return result;
 };

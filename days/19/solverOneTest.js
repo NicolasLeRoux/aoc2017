@@ -7,7 +7,7 @@ describe('Day 19: A Series of Tubes (Part one),', function() {
 	 */
 	describe('Example n°01,', function() {
 		it('should return ABCDEF for the given input.', function() {
-			var array = [
+			var matrix = [
 				[' ', ' ', ' ', ' ', ' ', '|', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
 				[' ', ' ', ' ', ' ', ' ', '|', ' ', ' ', '+', '-', '-', '+', ' ', ' ', ' ', ' '],
 				[' ', ' ', ' ', ' ', ' ', 'A', ' ', ' ', '|', ' ', ' ', 'C', ' ', ' ', ' ', ' '],
@@ -16,7 +16,7 @@ describe('Day 19: A Series of Tubes (Part one),', function() {
 				[' ', ' ', ' ', ' ', ' ', '+', 'B', '-', '+', ' ', ' ', '+', '-', '-', '+', ' ']
 			];
 
-			expect(solve(array)).to.equal('ABCDEF');
+			expect(solve(matrix)).to.equal('ABCDEF');
 		});
 	});
 });
