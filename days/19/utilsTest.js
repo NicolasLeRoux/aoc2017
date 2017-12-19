@@ -25,6 +25,49 @@ describe.only('Day 19: Tools,', function() {
 			expect(utils.findStartingPoint(matrix)).to.eql(2);
 		});
 	});
+	describe('The method return the value in the matrix at a given position aka \'getAt\',', function() {
+		var matrix = [
+			['a', 'b', 'c'],
+			['d', 'e', 'f'],
+			['g', 'h', 'i'],
+		];
+
+		/**
+		 * Simple case
+		 */
+		it('should return e for the given input.', function () {
+			var position = {
+				x: 1,
+				y: 1
+			};
+
+			expect(utils.getAt(matrix, position)).to.eql('e');
+		});
+
+		/**
+		 * Simple case bis
+		 */
+		it('should return c for the given input.', function () {
+			var position = {
+				x: 2,
+				y: 0
+			};
+
+			expect(utils.getAt(matrix, position)).to.eql('c');
+		});
+
+		/**
+		 * Simple case ter
+		 */
+		it('should return g for the given input.', function () {
+			var position = {
+				x: 0,
+				y: 2
+			};
+
+			expect(utils.getAt(matrix, position)).to.eql('g');
+		});
+	});
 
 	describe('The method to get the next position in the maze aka \'getNextPosition\',', function() {
 		var array = [
