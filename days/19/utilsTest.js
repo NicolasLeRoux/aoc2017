@@ -96,7 +96,7 @@ describe.only('Day 19: Tools,', function() {
 					[' ', '|']
 				],
 				position: {
-					x: 0,
+					x: 1,
 					y: 0,
 					dir: 'S'
 				},
@@ -113,7 +113,7 @@ describe.only('Day 19: Tools,', function() {
 					[' ', 'A']
 				],
 				position: {
-					x: 0,
+					x: 1,
 					y: 0,
 					dir: 'S'
 				},
@@ -130,7 +130,7 @@ describe.only('Day 19: Tools,', function() {
 					[' ', '|']
 				],
 				position: {
-					x: 0,
+					x: 1,
 					y: 0,
 					dir: 'S'
 				},
@@ -147,7 +147,7 @@ describe.only('Day 19: Tools,', function() {
 					['|', ' ']
 				],
 				position: {
-					x: 1,
+					x: 0,
 					y: 1,
 					dir: 'N'
 				},
@@ -254,7 +254,7 @@ describe.only('Day 19: Tools,', function() {
 				],
 				position: {
 					x: 1,
-					y: 2,
+					y: 1,
 					dir: 'N'
 				},
 				expected: {
@@ -271,7 +271,7 @@ describe.only('Day 19: Tools,', function() {
 					[' ', '|', ' ']
 				],
 				position: {
-					x: 0,
+					x: 1,
 					y: 1,
 					dir: 'E'
 				},
@@ -289,7 +289,7 @@ describe.only('Day 19: Tools,', function() {
 					[' ', '|', ' ']
 				],
 				position: {
-					x: 2,
+					x: 1,
 					y: 1,
 					dir: 'W'
 				},
@@ -307,7 +307,7 @@ describe.only('Day 19: Tools,', function() {
 					[' ', ' ', ' ']
 				],
 				position: {
-					x: 2,
+					x: 1,
 					y: 1,
 					dir: 'W'
 				},

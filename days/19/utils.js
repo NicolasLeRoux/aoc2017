@@ -29,9 +29,43 @@ var getAt = module.exports.getAt = function (matrix, position) {
  * Method to get the next position in the maze.
  */
 module.exports.getNextPosition = function (matrix, position) {
-	return {
-		x: 0,
-		y: 0,
-		dir: ''
-	};
+	let x = position.x,
+		y = position.y,
+		dir = position.dir,
+		val = getAt(matrix, position);
+
+	if (val === '+') {
+		if (dir !== 'S' && getAt(matrix, {x, y: y - 1}) !== ' ') {
+			y--;
+			dir = 'N';
+		} else if (dir !== 'W' && getAt(matrix, {x: x + 1, y}) !== ' ') {
+			x++;
+			dir = 'E';
+		} else if (dir !== 'N' && getAt(matrix, {x, y: y + 1}) !== ' ') {
+			y++;
+			dir = 'S';
+		} else if (dir !== 'E' && getAt(matrix, {x: x - 1, y}) !== ' ') {
+			x--;
+			dir = 'W';
+		}
+	} else if (val === ' ') {
+		return undefined;
+	} else {
+		switch (position.dir) {
+			case 'N':
+				y--;
+				break;
+			case 'E':
+				x++;
+				break;
+			case 'S':
+				y++;
+				break;
+			case 'W':
+				x--;
+				break;
+		}
+	}
+
+	return {x, y, dir};
 };
