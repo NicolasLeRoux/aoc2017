@@ -149,4 +149,26 @@ describe('Day 10: Tools,', function() {
 			expect(utils.addStandardSuffix(array)).to.eql([49, 44, 50, 44, 51, 17, 31, 73, 47, 23]);
 		});
 	});
+
+	describe('The method to reduce a sparse hash into a dense hash aka \'reduceSparseHash\',', function () {
+		/**
+		 * Should combine each consecutive block of 16 numbers in the sparse hash.
+		 * 65 ^ 27 ^ 9 ^ 1 ^ 4 ^ 3 ^ 40 ^ 50 ^ 91 ^ 7 ^ 6 ^ 0 ^ 2 ^ 5 ^ 68 ^ 22 = 64
+		 */
+		it('Should return [64] for the given input.', function () {
+			var array = [65, 27, 9, 1, 4, 3, 40, 50, 91, 7, 6, 0, 2, 5, 68, 22];
+
+			expect(utils.reduceSparseHash(array)).to.eql([64]);
+		});
+
+		/**
+		 * Input with more than one block.
+		 */
+		it('Should return [22, 54] for the given input.', function () {
+			var array = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 22];
+			array = array.concat([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 54]);
+
+			expect(utils.reduceSparseHash(array)).to.eql([22, 54]);
+		});
+	});
 });

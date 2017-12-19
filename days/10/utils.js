@@ -78,3 +78,21 @@ module.exports.addStandardSuffix = function (array) {
 	return array.slice()
 		.concat([17, 31, 73, 47, 23]);
 };
+
+/**
+ * Méthod to reduce a sparse hash into a dense hash
+ */
+module.exports.reduceSparseHash = function (array) {
+	var result = [],
+		nbLoop = array.length / 16;
+
+	for (let i = 0; i < nbLoop; i++) {
+		let range = 16 * i,
+			block = array.slice(range, range + 16),
+			denseHash = block.reduce((acc, val) => acc ^= val);
+
+		result.push(denseHash);
+	}
+	
+	return result;
+};
