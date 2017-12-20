@@ -33,3 +33,27 @@ module.exports.parse = function (str) {
 		}
 	};
 };
+
+/**
+ * Method to get the next state of the particule
+ */
+module.exports.getNextState = function (state) {
+	let newVelX = state.vel.x + state.acc.x,
+		newVelY = state.vel.y + state.acc.y,
+		newVelZ = state.vel.z + state.acc.z;
+
+
+	return {
+		pos: {
+			x: state.pos.x + newVelX,
+			y: state.pos.y + newVelY,
+			z: state.pos.z + newVelZ
+		},
+		vel: {
+			x: newVelX,
+			y: newVelY,
+			z: newVelZ
+		},
+		acc: Object.assign({}, state.acc)
+	};
+};
