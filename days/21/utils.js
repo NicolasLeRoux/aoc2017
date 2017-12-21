@@ -46,3 +46,22 @@ module.exports.isEqualsMatrix = function (matA, matB) {
 
 	return result;
 };
+
+/**
+ * Method to generate the rule alternative
+ */
+module.exports.getRuleAlternative = function (matrix) {
+};
+
+/**
+ * Method to split a matrix following the day 21 process
+ */
+module.exports.splitMatrix = function (matrix) {
+	var size = matrix.length;
+
+	if (size % 2 === 0) {
+	} else {
+	}
+
+	return [];
+};
