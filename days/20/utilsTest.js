@@ -157,7 +157,7 @@ describe('Day 20: Tools,', function() {
 		});
 	});
 
-	describe('The method to calcul the distance from the origin aka \'getPositionFromOrigin\',', function() {
+	describe('The method to calcul the distance from the origin aka \'getDistanceFromOrigin\',', function() {
 		/**
 		 * Simple calcul of distance
 		 */
@@ -169,7 +169,7 @@ describe('Day 20: Tools,', function() {
 			};
 
 
-			expect(utils.getPositionFromOrigin(pos)).to.eql(3);
+			expect(utils.getDistanceFromOrigin(pos)).to.eql(3);
 		});
 
 		/**
@@ -183,7 +183,7 @@ describe('Day 20: Tools,', function() {
 			};
 
 
-			expect(utils.getPositionFromOrigin(pos)).to.eql(2058);
+			expect(utils.getDistanceFromOrigin(pos)).to.eql(2058);
 		});
 	});
 });
