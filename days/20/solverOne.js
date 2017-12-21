@@ -20,8 +20,15 @@ module.exports = function (array) {
 			particules.splice(i, 1, particule);
 		}
 
+		particules = particules.sort((partA, partB) => {
+			let distA = utils.getDistanceFromOrigin(partA.pos),
+				distB = utils.getDistanceFromOrigin(partB.pos);
+
+			return distA < distB ? -1 : 1;
+		});
+
 		count++;
 	}
 
-	return 0;
+	return particules[0].name;
 };
