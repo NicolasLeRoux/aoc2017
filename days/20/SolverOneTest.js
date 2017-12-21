@@ -1,7 +1,7 @@
 const expect = require('expect.js');
 const solve = require('./solverOne.js');
 
-describe.only('Day 20: Particle Swarm (Part one),', function() {
+describe('Day 20: Particle Swarm (Part one),', function() {
 	/**
 	 * Example n°01: Simple particule on the X-axis
 	 */

@@ -29,7 +29,7 @@ describe('Day 20: Tools,', function() {
 		});
 	});
 
-	describe('The method parse the input data aka \'parse\',', function() {
+	describe('The method to get the next state of a particule aka \'getNextState\',', function() {
 		/**
 		 * Simple state on the X-axis
 		 */
@@ -71,6 +71,50 @@ describe('Day 20: Tools,', function() {
 			});
 		});
 
+		/**
+		 * Simple state on the X-axis with other data
+		 */
+		it('should return the new state of a particule with the same other data.', function () {
+			let state = {
+				name: 'Part021',
+				weight: 21,
+				pos: {
+					x: 3,
+					y: 0,
+					z: 0
+				},
+				vel: {
+					x: 2,
+					y: 0,
+					z: 0
+				},
+				acc: {
+					x: -1,
+					y: 0,
+					z: 0
+				}
+			};
+
+			expect(utils.getNextState(state)).to.eql({
+				name: 'Part021',
+				weight: 21,
+				pos: {
+					x: 4,
+					y: 0,
+					z: 0
+				},
+				vel: {
+					x: 1,
+					y: 0,
+					z: 0
+				},
+				acc: {
+					x: -1,
+					y: 0,
+					z: 0
+				}
+			});
+		});
 		/**
 		 * Complexe state
 		 */

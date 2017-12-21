@@ -43,7 +43,7 @@ module.exports.getNextState = function (state) {
 		newVelZ = state.vel.z + state.acc.z;
 
 
-	return {
+	return Object.assign(state, {
 		pos: {
 			x: state.pos.x + newVelX,
 			y: state.pos.y + newVelY,
@@ -54,8 +54,7 @@ module.exports.getNextState = function (state) {
 			y: newVelY,
 			z: newVelZ
 		},
-		acc: Object.assign({}, state.acc)
-	};
+	});
 };
 
 /**
