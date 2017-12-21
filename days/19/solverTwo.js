@@ -6,4 +6,3 @@ module.exports = function (matrix) {
 
 	return path.length;
 };
-

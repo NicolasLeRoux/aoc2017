@@ -1,7 +1,7 @@
 const expect = require('expect.js');
 const utils = require('./utils.js');
 
-describe.only('Day 20: Tools,', function() {
+describe('Day 20: Tools,', function() {
 	describe('The method parse the input data aka \'parse\',', function() {
 		/**
 		 * Simple particule
