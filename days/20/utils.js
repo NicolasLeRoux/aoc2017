@@ -69,8 +69,23 @@ module.exports.getDistanceFromOrigin = function (position) {
 /**
  * Méthode to check if 2 particules are at the same position
  */
-module.exports.isCollision = function (partA, partB) {
+var isCollision = module.exports.isCollision = function (partA, partB) {
 	return partA.pos.x === partB.pos.x
 		&& partA.pos.y === partB.pos.y
 		&& partA.pos.z === partB.pos.z;
+};
+
+/**
+ * Method to remove particules in collision
+ */
+module.exports.particulesWithoutCollision = function (array) {
+	return array.filter((part, index, array) => {
+		for (let i = 0; i < array.length; i++) {
+			if (i !== index && isCollision(part, array[i])) {
+				return false;
+			}
+		}
+
+		return true;
+	});
 };

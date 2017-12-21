@@ -14,8 +14,6 @@ module.exports = function (array) {
 	// Moving particules
 	let count = 0;
 	while (count < 1000) {
-		let collisionPool = [];
-
 		for (let i = 0; i < particules.length; i++) {
 			let particule = utils.getNextState(particules[i]);
 
@@ -26,16 +24,7 @@ module.exports = function (array) {
 			let distA = utils.getDistanceFromOrigin(partA.pos),
 				distB = utils.getDistanceFromOrigin(partB.pos);
 
-			if (distA === distB && utils.isCollision(partA, partB)) {
-				collisionPool.push(partA.name);
-				collisionPool.push(partB.name);
-			}
-
 			return distA < distB ? -1 : 1;
-		});
-
-		particules = particules.filter(part => {
-			return collisionPool.indexOf(part.name) === -1;
 		});
 
 		count++;

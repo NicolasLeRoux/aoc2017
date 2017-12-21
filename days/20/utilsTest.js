@@ -230,4 +230,52 @@ describe('Day 20: Tools,', function() {
 			expect(utils.isCollision(partA, partB)).to.eql(true);
 		});
 	});
+
+	describe('The method to test a collision aka \'particulesWithoutCollision\',', function() {
+		/**
+		 * No collision
+		 */
+		it('should return an array with the same particules if no collision.', function () {
+			var array = [
+				{
+					pos: {
+						x: 1,
+						y: 1,
+						z: 1
+					}
+				},
+				partB = {
+					pos: {
+						x: 2,
+						y: 2,
+						z: 2
+					}
+				}];
+
+			expect(utils.particulesWithoutCollision(array)).to.eql(array);
+		});
+
+		/**
+		 * A collision
+		 */
+		it('should return an empty array if all particules are in collision.', function () {
+			var array = [
+				{
+					pos: {
+						x: 1,
+						y: 1,
+						z: 1
+					}
+				},
+				partB = {
+					pos: {
+						x: 1,
+						y: 1,
+						z: 1
+					}
+				}];
+
+			expect(utils.particulesWithoutCollision(array)).to.eql([]);
+		});
+	});
 });
