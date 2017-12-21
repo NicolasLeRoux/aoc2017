@@ -4,3 +4,10 @@
 module.exports.parse = function () {
 	return 0;
 };
+
+/**
+ * Method to build a matrix for the pattern
+ */
+module.exports.toMatrix = function (str) {
+	return [];
+};

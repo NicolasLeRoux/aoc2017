@@ -2,7 +2,7 @@ const expect = require('expect.js');
 const utils = require('./utils.js');
 
 describe('Day 21: Tools,', function() {
-	describe.only('The method parse the input data aka \'parse\',', function() {
+	describe('The method parse the input data aka \'parse\',', function() {
 		/**
 		 * Rule n°01: ../.# => ##./#../...
 		 */
@@ -41,6 +41,33 @@ describe('Day 21: Tools,', function() {
 					['#', '.', '.', '#']
 				]
 			});
+		});
+	});
+
+	describe.only('The method to build a matrix from a string aka \'toMatrix\',', function() {
+		/**
+		 * 2x2 example: ../.#
+		 */
+		it('should return the correct matrix for the input \'../.#\'.', function() {
+			var str = '../.#';
+
+			expect(utils.toMatrix(str)).to.eql([
+				['.', '.'],
+				['.', '#']
+			]);
+		});
+
+		/**
+		 * 3x3 example: .#./..#/###
+		 */
+		it('should return the correct matrix for the input \'.#./..#/###\'.', function() {
+			var str = '.#./..#/###';
+
+			expect(utils.toMatrix(str)).to.eql([
+				['.', '#', '.'],
+				['.', '.', '#'],
+				['#', '#', '#']
+			]);
 		});
 	});
 });
