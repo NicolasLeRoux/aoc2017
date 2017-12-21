@@ -24,3 +24,25 @@ var toMatrix = module.exports.toMatrix = function (str) {
 
 	return matrix;
 };
+
+/**
+ * Method to compare two matrix
+ */
+module.exports.isEqualsMatrix = function (matA, matB) {
+	var result = true;
+
+	if (matA.length === matB.length && matA[0].length === matB[0].length) {
+		loop: for (let i = 0; i < matA.length; i++) {
+			for (let j = 0; j < matA[0].length; j++) {
+				if (matA[i][j] !== matB[i][j]) {
+					result = false;
+					break loop;
+				}
+			}
+		}
+	} else {
+		result = false;
+	}
+
+	return result;
+};

@@ -70,4 +70,38 @@ describe('Day 21: Tools,', function() {
 			]);
 		});
 	});
+
+	describe('The method to compare two matrix aka \'isSameMatrix\',', function() {
+		/**
+		 * Two equals matrix
+		 */
+		it('should return true if the two matrix are equal.', function () {
+			var matA = [
+					[1, 2],
+					[3, 4]
+				],
+				matB = [
+					[1, 2],
+					[3, 4]
+				];
+
+			expect(utils.isEqualsMatrix(matA, matB)).to.eql(true);
+		});
+
+		/**
+		 * Two different matrix
+		 */
+		it('should return false if the two matrix are not equal.', function () {
+			var matA = [
+					[1, 2],
+					[3, 4]
+				],
+				matB = [
+					[1, 2],
+					[4, 3]
+				];
+
+			expect(utils.isEqualsMatrix(matA, matB)).to.eql(false);
+		});
+	});
 });
