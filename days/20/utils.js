@@ -57,3 +57,12 @@ module.exports.getNextState = function (state) {
 		acc: Object.assign({}, state.acc)
 	};
 };
+
+/**
+ * Method to calcul the Manhattan distance from the position <0, 0, 0>
+ */
+module.exports.getPositionFromOrigin = function (position) {
+	return Math.abs(position.x)
+		+ Math.abs(position.y)
+		+ Math.abs(position.z);
+};

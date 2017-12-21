@@ -29,7 +29,7 @@ describe.only('Day 20: Tools,', function() {
 		});
 	});
 
-	describe.only('The method parse the input data aka \'parse\',', function() {
+	describe('The method parse the input data aka \'parse\',', function() {
 		/**
 		 * Simple state on the X-axis
 		 */
@@ -112,5 +112,34 @@ describe.only('Day 20: Tools,', function() {
 			});
 		});
 	});
-});
 
+	describe('The method to calcul the distance from the origin aka \'getPositionFromOrigin\',', function() {
+		/**
+		 * Simple calcul of distance
+		 */
+		it('should return 3 for the position <1,1,1>.', function () {
+			var pos = {
+				x: 1,
+				y: 1,
+				z: 1
+			};
+
+
+			expect(utils.getPositionFromOrigin(pos)).to.eql(3);
+		});
+
+		/**
+		 * Complexe calcul of distance
+		 */
+		it('should return 2058 for the position <1011,-918,-129>.', function () {
+			var pos = {
+				x: 1011,
+				y: -918,
+				z: -129
+			};
+
+
+			expect(utils.getPositionFromOrigin(pos)).to.eql(2058);
+		});
+	});
+});
