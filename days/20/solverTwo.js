@@ -27,6 +27,8 @@ module.exports = function (array) {
 			return distA < distB ? -1 : 1;
 		});
 
+		particules = utils.particulesWithoutCollision(particules);
+
 		count++;
 	}
 
