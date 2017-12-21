@@ -1,14 +1,20 @@
 /**
  * Method to parse the input of the day 21
  */
-module.exports.parse = function () {
-	return 0;
+module.exports.parse = function (str) {
+	var ruleStr = str.slice(0, str.indexOf(' ')),
+		patternStr = str.slice(str.indexOf('=>') + 3);
+
+	return {
+		rule: toMatrix(ruleStr),
+		pattern: toMatrix(patternStr)
+	};
 };
 
 /**
  * Method to build a matrix for the pattern
  */
-module.exports.toMatrix = function (str) {
+var toMatrix = module.exports.toMatrix = function (str) {
 	var rows = str.split('/'),
 		matrix = [];
 

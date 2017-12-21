@@ -25,7 +25,7 @@ describe('Day 21: Tools,', function() {
 		/**
 		 * Rule n°02: .#./..#/### => #..#/..../..../#..#
 		 */
-		it('should return x for the input \'.#./..#/### => #..#/..../..../#..#\'.', function() {
+		it('should return the correct set for the input \'.#./..#/### => #..#/..../..../#..#\'.', function() {
 			var str = '.#./..#/### => #..#/..../..../#..#';
 
 			expect(utils.parse(str)).to.eql({
