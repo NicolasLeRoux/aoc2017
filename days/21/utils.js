@@ -9,5 +9,12 @@ module.exports.parse = function () {
  * Method to build a matrix for the pattern
  */
 module.exports.toMatrix = function (str) {
-	return [];
+	var rows = str.split('/'),
+		matrix = [];
+
+	for (let i = 0; i < rows.length; i++) {
+		matrix.push(rows[i].split(''));
+	}
+
+	return matrix;
 };

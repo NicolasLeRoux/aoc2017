@@ -44,7 +44,7 @@ describe('Day 21: Tools,', function() {
 		});
 	});
 
-	describe.only('The method to build a matrix from a string aka \'toMatrix\',', function() {
+	describe('The method to build a matrix from a string aka \'toMatrix\',', function() {
 		/**
 		 * 2x2 example: ../.#
 		 */
