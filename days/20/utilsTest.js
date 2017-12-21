@@ -168,7 +168,6 @@ describe('Day 20: Tools,', function() {
 				z: 1
 			};
 
-
 			expect(utils.getDistanceFromOrigin(pos)).to.eql(3);
 		});
 
@@ -182,8 +181,53 @@ describe('Day 20: Tools,', function() {
 				z: -129
 			};
 
-
 			expect(utils.getDistanceFromOrigin(pos)).to.eql(2058);
+		});
+	});
+
+	describe('The method to test a collision aka \'isCollision\',', function() {
+		/**
+		 * No collision
+		 */
+		it('should return false for the position <1,1,1> and <2,2,2>.', function () {
+			var partA = {
+					pos: {
+						x: 1,
+						y: 1,
+						z: 1
+					}
+				},
+				partB = {
+					pos: {
+						x: 2,
+						y: 2,
+						z: 2
+					}
+				};
+
+			expect(utils.isCollision(partA, partB)).to.eql(false);
+		});
+
+		/**
+		 * A collision
+		 */
+		it('should return true for the position <1,2,3> and <1,2,3>.', function () {
+			var partA = {
+					pos: {
+						x: 1,
+						y: 2,
+						z: 3
+					}
+				},
+				partB = {
+					pos: {
+						x: 1,
+						y: 2,
+						z: 3
+					}
+				};
+
+			expect(utils.isCollision(partA, partB)).to.eql(true);
 		});
 	});
 });

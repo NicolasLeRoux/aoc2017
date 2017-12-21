@@ -65,3 +65,12 @@ module.exports.getDistanceFromOrigin = function (position) {
 		+ Math.abs(position.y)
 		+ Math.abs(position.z);
 };
+
+/**
+ * Méthode to check if 2 particules are at the same position
+ */
+module.exports.isCollision = function (partA, partB) {
+	return partA.pos.x === partB.pos.x
+		&& partA.pos.y === partB.pos.y
+		&& partA.pos.z === partB.pos.z;
+};
