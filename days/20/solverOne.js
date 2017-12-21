@@ -13,7 +13,7 @@ module.exports = function (array) {
 
 	// Moving particules
 	let count = 0;
-	while (count < 100) {
+	while (count < 1000) {
 		for (let i = 0; i < particules.length; i++) {
 			let particule = utils.getNextState(particules[i]);
 
