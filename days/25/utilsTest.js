@@ -2,7 +2,7 @@ const expect = require('expect.js');
 const utils = require('./utils.js');
 
 describe.only('Day 25: Tools,', function() {
-	describe('The method parse the blueprint aka \'parse\',', function() {
+	describe('The method to parse the blueprint aka \'parse\',', function() {
 		/**
 		 * Full blueprint
 		 */
@@ -52,7 +52,7 @@ describe.only('Day 25: Tools,', function() {
 		});
 	});
 
-	describe('The method parse the head of the blueprint aka \'headParse\',', function() {
+	describe('The method to parse the head of the blueprint aka \'headParse\',', function() {
 		/**
 		 * Blueprint head
 		 */
@@ -78,7 +78,7 @@ describe.only('Day 25: Tools,', function() {
 		});
 	});
 
-	describe('The method parse a state of the blueprint aka \'stateParse\',', function() {
+	describe('The method to parse a state of the blueprint aka \'stateParse\',', function() {
 		/**
 		 * Blueprint state
 		 */
@@ -100,6 +100,29 @@ describe.only('Day 25: Tools,', function() {
 					}
 				]
 			});
+		});
+	});
+
+	describe('The method to calcul the checksum of a given tape aka \'calculChecksum\',', function() {
+		/**
+		 * Simple tape
+		 */
+		it('should return 3 for the given tape (Simple tape).', function() {
+			let tape = [0, 1, 1, 0, 1, 0];
+
+			expect(utils.calculChecksum(tape)).to.equal(3);
+		});
+
+		/**
+		 * Complexe tape
+		 */
+		it('should return 3 for the given tape (Complexe tape).', function() {
+			let tape = [];
+			tape[-3] = 1;
+			tape[-5] = 1;
+			tape[8] = 1;
+
+			expect(utils.calculChecksum(tape)).to.equal(3);
 		});
 	});
 });

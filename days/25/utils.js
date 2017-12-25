@@ -49,3 +49,16 @@ var stateParse = module.exports.stateParse = function (str) {
 
 	return {name, conditions};
 };
+
+/**
+ * Method to calcul the diagnostic checksum
+ */
+module.exports.calculChecksum = function (tape) {
+	var acc = 0;
+
+	for (var prop in tape) {
+		if (tape[prop] === 1) acc++;
+	}
+
+	return acc;
+}
