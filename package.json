@@ -19,6 +19,7 @@
     "day:13": "node ./days/13/index.js",
     "day:19": "node ./days/19/index.js",
     "day:20": "node ./days/20/index.js",
+    "day:24": "node ./days/24/index.js",
     "day:25": "node ./days/25/index.js",
     "test": "mocha ./days/**/*Test.js"
   },
