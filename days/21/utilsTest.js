@@ -105,7 +105,7 @@ describe('Day 21: Tools,', function() {
 		});
 	});
 
-	describe.only('The method to split matrix aka \'splitMatrix\',', function() {
+	describe.skip('The method to split matrix aka \'splitMatrix\',', function() {
 		/**
 		 * Case with no splitting.
 		 */

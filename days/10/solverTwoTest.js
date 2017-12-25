@@ -1,7 +1,7 @@
 const expect = require('expect.js');
 const solve = require('./solverTwo.js');
 
-describe('Day 10: Knot Hash (Part two),', function() {
+describe.skip('Day 10: Knot Hash (Part two),', function() {
 	/**
 	 * Example n°01: The empty string becomes ``a2582a3a0e66e6e86e3812dcb672a272``.
 	 */
