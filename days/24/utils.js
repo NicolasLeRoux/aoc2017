@@ -22,10 +22,10 @@ module.exports.calculBridgeStrength = function (bridge) {
 };
 
 /**
- * Method to get the components that match the given one
+ * Method to get the components that match the given port
  */
-module.exports.getMatchingComponents = function (component, set) {
+module.exports.getMatchingComponents = function (port, set) {
 	return set.filter(item => {
-		return item.includes(component[0]) || item.includes(component[1]);
+		return item.includes(port);
 	});
 };

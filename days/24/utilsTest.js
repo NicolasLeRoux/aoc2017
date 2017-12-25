@@ -67,9 +67,9 @@ describe.only('Day 24: Tools,', function() {
 		});
 	});
 
-	describe('The method to get the components that match the given one aka \'getMatchingComponents\',', function() {
+	describe('The method to get the components that match the given port aka \'getMatchingComponents\',', function() {
 		/**
-		 * Stating component
+		 * Starting port
 		 */
 		it('should return all components that can be a starting one.', function() {
 			var components = [
@@ -79,15 +79,15 @@ describe.only('Day 24: Tools,', function() {
 				[0, 4]
 			];
 
-			expect(utils.getMatchingComponents([0, 0], components)).to.eql([
+			expect(utils.getMatchingComponents(0, components)).to.eql([
 				[0, 2],
 				[0, 4]
 			]);
 		});
 		/**
-		 * Simple set
+		 * Another port
 		 */
-		it('should return the components that can be used with the component 2/3.', function() {
+		it('should return the components that can be used with the port 2.', function() {
 			var components = [
 				[0, 2],
 				[2, 2],
@@ -95,7 +95,7 @@ describe.only('Day 24: Tools,', function() {
 				[5, 4]
 			];
 
-			expect(utils.getMatchingComponents([2, 3], components)).to.eql([
+			expect(utils.getMatchingComponents(2, components)).to.eql([
 				[0, 2],
 				[2, 2],
 				[3, 2]
