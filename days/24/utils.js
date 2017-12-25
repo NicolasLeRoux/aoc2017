@@ -20,3 +20,12 @@ module.exports.calculBridgeStrength = function (bridge) {
 		return acc + val[0] + val[1];
 	}, 0);
 };
+
+/**
+ * Method to get the components that match the given one
+ */
+module.exports.getMatchingComponents = function (component, set) {
+	return set.filter(item => {
+		return item.includes(component[0]) || item.includes(component[1]);
+	});
+};

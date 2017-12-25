@@ -66,4 +66,40 @@ describe.only('Day 24: Tools,', function() {
 			expect(utils.calculBridgeStrength(bridge)).to.equal(31);
 		});
 	});
+
+	describe('The method to get the components that match the given one aka \'getMatchingComponents\',', function() {
+		/**
+		 * Stating component
+		 */
+		it('should return all components that can be a starting one.', function() {
+			var components = [
+				[0, 2],
+				[2, 2],
+				[3, 2],
+				[0, 4]
+			];
+
+			expect(utils.getMatchingComponents([0, 0], components)).to.eql([
+				[0, 2],
+				[0, 4]
+			]);
+		});
+		/**
+		 * Simple set
+		 */
+		it('should return the components that can be used with the component 2/3.', function() {
+			var components = [
+				[0, 2],
+				[2, 2],
+				[3, 2],
+				[5, 4]
+			];
+
+			expect(utils.getMatchingComponents([2, 3], components)).to.eql([
+				[0, 2],
+				[2, 2],
+				[3, 2]
+			]);
+		});
+	});
 });
