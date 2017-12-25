@@ -1,7 +1,7 @@
 const expect = require('expect.js');
 const utils = require('./utils.js');
 
-describe.only('Day 25: Tools,', function() {
+describe('Day 25: Tools,', function() {
 	describe('The method to parse the blueprint aka \'parse\',', function() {
 		/**
 		 * Full blueprint
