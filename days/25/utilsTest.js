@@ -14,5 +14,42 @@ describe.only('Day 25: Tools,', function() {
 				nbStepsToPerform: 6
 			});
 		});
+
+		/**
+		 * Blueprint head bis
+		 */
+		it('should return the expected object for the given blueprint head.', function() {
+			var str = 'Begin in state D.\nPerform a diagnostic checksum after 2356 steps.';
+
+			expect(utils.headParse(str)).to.eql({
+				initialState: 'D',
+				nbStepsToPerform: 2356
+			});
+		});
+	});
+
+	describe('The method parse a state of the blueprint aka \'stateParse\',', function() {
+		/**
+		 * Blueprint state
+		 */
+		it('should return the expected object for the given blueprint state.', function() {
+			var str = 'In state A:\n  If the current value is 0:\n    - Write the value 1.\n    - Move one slot to the right.\n    - Continue with state B.\n  If the current value is 1:\n    - Write the value 0.\n    - Move one slot to the left.\n    - Continue with state B.';
+
+			expect(utils.stateParse(str)).to.eql({
+				name: 'A',
+				conditions: [
+					{
+						valueToWrite: 1,
+						movingDirection: 'right',
+						nextState: 'B'
+					},
+					{
+						valueToWrite: 0,
+						movingDirection: 'left',
+						nextState: 'B'
+					}
+				]
+			});
+		});
 	});
 });
