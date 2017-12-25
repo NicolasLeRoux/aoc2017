@@ -1,7 +1,7 @@
 const expect = require('expect.js');
 const utils = require('./utils.js');
 
-describe('Day 24: Tools,', function() {
+describe.only('Day 24: Tools,', function() {
 	describe('The method to parse the input data aka \'parse\',', function() {
 		/**
 		 * Component 0/2
@@ -19,6 +19,51 @@ describe('Day 24: Tools,', function() {
 			var str = '10/5';
 
 			expect(utils.parse(str)).to.eql([10, 5]);
+		});
+	});
+
+	describe('The method to build all the available bridge aka \'buildAllAvailableBridge\',', function() {
+		/**
+		 * Very small components set
+		 */
+		it('should return the coorect list for the given input.', function() {
+			var array = [
+				'0/2',
+				'2/2',
+				'2/3',
+				'2/4',
+				'2/5'
+			];
+
+			expect(utils.buildAllAvailableBridge(array)).to.eql([
+				[[0, 2], [2, 2], [2, 3]],
+				[[0, 2], [2, 2], [2, 4]],
+				[[0, 2], [2, 2], [2, 5]]
+			]);
+		});
+	});
+
+	describe('The method to calcul the strength of a bridge aka \'calculBridgeStrength\',', function() {
+		/**
+		 * Weak bridge
+		 */
+		it('should return 6 for the given bridge.', function() {
+			var bridge = [
+				[0, 2], [2, 2]
+			];
+
+			expect(utils.calculBridgeStrength(bridge)).to.equal(6);
+		});
+
+		/**
+		 * Simple bridge
+		 */
+		it('should return 31 for the given bridge.', function() {
+			var bridge = [
+				[0, 1], [1, 10], [10, 9]
+			];
+
+			expect(utils.calculBridgeStrength(bridge)).to.equal(31);
 		});
 	});
 });
