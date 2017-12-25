@@ -4,12 +4,21 @@ const utils = require('./utils.js');
 describe('Day 24: Tools,', function() {
 	describe('The method to parse the input data aka \'parse\',', function() {
 		/**
-		 * Simple component
+		 * Component 0/2
 		 */
-		it('should return a component for the given input.', function() {
+		it('should return [0, 2] for the input 0/2.', function() {
 			var str = '0/2';
 
-			expect(utils.parse(str)).to.eql(null);
+			expect(utils.parse(str)).to.eql([0, 2]);
+		});
+
+		/**
+		 * Component 10/5
+		 */
+		it('should return [10, 5] for the input 10/5.', function() {
+			var str = '10/5';
+
+			expect(utils.parse(str)).to.eql([10, 5]);
 		});
 	});
 });
