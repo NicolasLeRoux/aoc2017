@@ -2,12 +2,23 @@
  * Method to parse the blueprint
  */
 module.exports.parse = function (array) {
+	let head = headParse(array[0]),
+		states = {};
+
+	for (let i = 1; i < array.length; i++) {
+		let lign = array[i],
+			state = stateParse(lign);
+
+		states[state.name] = state;
+	}
+
+	return Object.assign({}, head, {states});
 };
 
 /**
  * Method to parse the head of the blueprint
  */
-module.exports.headParse = function (str) {
+var headParse = module.exports.headParse = function (str) {
 	let initialState = str.slice(str.indexOf('state') + 6, str.indexOf('.')),
 		nbStepsToPerform = +str.slice(str.indexOf('after') + 6, str.indexOf('steps'));
 
@@ -17,7 +28,7 @@ module.exports.headParse = function (str) {
 /**
  * Method to parse a state of the blueprint
  */
-module.exports.stateParse = function (str) {
+var stateParse = module.exports.stateParse = function (str) {
 	let array = str.split(/\n/),
 		nameLine = array[0],
 		name = nameLine.slice(nameLine.indexOf('state') + 6, nameLine.indexOf(':')),
