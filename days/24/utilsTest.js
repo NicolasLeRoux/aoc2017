@@ -1,7 +1,7 @@
 const expect = require('expect.js');
 const utils = require('./utils.js');
 
-describe.only('Day 24: Tools,', function() {
+describe('Day 24: Tools,', function() {
 	describe('The method to parse the input data aka \'parse\',', function() {
 		/**
 		 * Component 0/2
