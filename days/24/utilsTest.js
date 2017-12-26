@@ -101,5 +101,35 @@ describe.only('Day 24: Tools,', function() {
 				[3, 2]
 			]);
 		});
+
+		/**
+		 * No match
+		 */
+		it('should return no components that can be used with the port 8.', function() {
+			var components = [
+				[0, 2],
+				[2, 2],
+				[3, 2],
+				[5, 4]
+			];
+
+			expect(utils.getMatchingComponents(8, components)).to.eql([]);
+		});
+	});
+
+	describe('The method to get the available port for a component aka \'getAvailablePort\',', function() {
+		/**
+		 * Component [0, 1]
+		 */
+		it('should return 1 for the port 0 and the component [0, 1].', function() {
+			expect(utils.getAvailablePort(0, [0, 1])).to.eql(1);
+		});
+
+		/**
+		 * Component [9, 6]
+		 */
+		it('should return 6 for the port 9 and the component [9, 6].', function() {
+			expect(utils.getAvailablePort(9, [9, 6])).to.eql(6);
+		});
 	});
 });

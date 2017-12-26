@@ -24,8 +24,17 @@ module.exports.calculBridgeStrength = function (bridge) {
 /**
  * Method to get the components that match the given port
  */
-module.exports.getMatchingComponents = function (port, set) {
+var getMatchingComponents = module.exports.getMatchingComponents = function (port, set) {
 	return set.filter(item => {
 		return item.includes(port);
 	});
+};
+
+/**
+ * Method to get the available port for a component
+ */
+module.exports.getAvailablePort = function (port, component) {
+	let availablePortIndex = component.indexOf(port) === 0 ? 1 : 0;
+
+	return component[availablePortIndex];
 };
