@@ -22,23 +22,62 @@ describe.only('Day 24: Tools,', function() {
 		});
 	});
 
-	describe('The method to build all the available bridge aka \'buildAllAvailableBridge\',', function() {
+	describe('The method to build the available bridge aka \'buildAvailableBridge\',', function() {
 		/**
-		 * Very small components set
+		 * Only one bridge level
 		 */
-		it('should return the coorect list for the given input.', function() {
+		it('should return the correct list for the given input.', function() {
 			var array = [
-				'0/2',
-				'2/2',
-				'2/3',
-				'2/4',
-				'2/5'
+				[0, 2],
+				[1, 0]
 			];
 
-			expect(utils.buildAllAvailableBridge(array)).to.eql([
+			expect(utils.buildAvailableBridge(0, array)).to.eql([
+				[[0, 2]],
+				[[1, 0]]
+			]);
+		});
+
+		/**
+		 * A two level bridge
+		 */
+		it('should return the correct list for the given input.', function() {
+			var array = [
+				[0, 2],
+				[2, 3],
+				[1, 0],
+				[4, 1],
+				[1, 5]
+			];
+
+			expect(utils.buildAvailableBridge(0, array)).to.eql([
+				[[0, 2], [2, 3]],
+				[[1, 0], [4, 1]],
+				[[1, 0], [1, 5]]
+			]);
+		});
+
+		/**
+		 * Multiple level bridge with a small components set
+		 */
+		it('should return the correct list for the given input.', function() {
+			var array = [
+				[0, 2],
+				[2, 2],
+				[2, 3],
+				[2, 4],
+				[2, 5],
+				[1, 0]
+			];
+
+			expect(utils.buildAvailableBridge(0, array)).to.eql([
 				[[0, 2], [2, 2], [2, 3]],
 				[[0, 2], [2, 2], [2, 4]],
-				[[0, 2], [2, 2], [2, 5]]
+				[[0, 2], [2, 2], [2, 5]],
+				[[0, 2], [2, 3]],
+				[[0, 2], [2, 4]],
+				[[0, 2], [2, 5]],
+				[[1, 0]]
 			]);
 		});
 	});
@@ -84,6 +123,7 @@ describe.only('Day 24: Tools,', function() {
 				[0, 4]
 			]);
 		});
+
 		/**
 		 * Another port
 		 */

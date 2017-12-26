@@ -6,10 +6,35 @@ module.exports.parse = function (str) {
 };
 
 /**
- * Method to build all the available bridge
+ * Method to build the available bridge
  */
-module.exports.buildAllAvailableBridge = function () {
-	return [];
+var buildAvailableBridge = module.exports.buildAvailableBridge = function (port, components) {
+	let bridges = [],
+		subSet = getMatchingComponents(port, components);
+
+	if (subSet.length) {
+		for (let i = 0; i < subSet.length; i++) {
+			let component = subSet[i],
+				availablePort = getAvailablePort(port, component),
+				cptsCopy = components.slice(),
+				subBridges;
+
+			// Remove current component
+			cptsCopy.splice(components.indexOf(component), 1);
+
+			subBridges = buildAvailableBridge(availablePort, cptsCopy);
+
+			if (subBridges.length) {
+				for (let j = 0; j < subBridges.length; j++) {
+					bridges.push([component].concat(subBridges[j]));
+				}
+			} else {
+				bridges.push([component]);
+			}
+		}
+	}
+
+	return bridges;
 };
 
 /**
@@ -33,7 +58,7 @@ var getMatchingComponents = module.exports.getMatchingComponents = function (por
 /**
  * Method to get the available port for a component
  */
-module.exports.getAvailablePort = function (port, component) {
+var getAvailablePort = module.exports.getAvailablePort = function (port, component) {
 	let availablePortIndex = component.indexOf(port) === 0 ? 1 : 0;
 
 	return component[availablePortIndex];
